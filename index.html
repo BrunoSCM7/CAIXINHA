@@ -25,6 +25,41 @@
     <button onclick="calcular()">Calcular</button>
 
     <div class="result" id="resultado"></div>
+
+    <!-- Botão de ajuda -->
+    <button id="helpButton" onclick="mostrarAjuda()">Como o cálculo é feito?</button>
+
+    <!-- Modal de ajuda -->
+    <div id="ajudaModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fecharAjuda()">&times;</span>
+        <h2>Explicação do Cálculo</h2>
+        <p>
+          O valor arrecadado na caixinha de Natal será distribuído entre os funcionários de forma proporcional aos meses
+          trabalhados.
+        </p>
+        <br>
+        <h3>Como é feita a divisão?</h3>
+        <br>
+        <ul>
+          <li><strong>Passo 1:</strong> O sistema somará o total de meses trabalhados de todos os funcionários. Por
+            exemplo, se você tiver 3 funcionários e eles trabalharam 12, 8 e 5 meses, o total de meses será 12 + 8 + 5 =
+            25 meses.</li><br>
+          <li><strong>Passo 2:</strong> O valor total arrecadado será dividido pela soma total de meses trabalhados.
+            Usando o exemplo acima, se a arrecadação foi de R$ 250,00, o valor por mês será 250 / 25 = R$ 10,00 por mês
+            trabalhado.</li><br>
+          <li><strong>Passo 3:</strong> O valor a ser recebido por cada funcionário será calculado multiplicando o valor
+            por mês pelo número de meses trabalhados. Então, no nosso exemplo, um funcionário que trabalhou 12 meses
+            receberá 12 * 10 = R$ 120,00.</li><br>
+          <li><strong>Passo 4:</strong> O processo se repetirá para cada funcionário, calculando o valor proporcional a
+            cada um conforme os meses trabalhados.</li><br>
+        </ul>
+        <p>
+          Essa forma de cálculo garante que cada funcionário receba uma parte justa do valor arrecadado, levando em
+          conta o tempo que cada um contribuiu para o ano.
+        </p>
+      </div>
+    </div>
   </div>
 
   <script src="js/script.js"></script>

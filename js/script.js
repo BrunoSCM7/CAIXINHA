@@ -1,44 +1,38 @@
 function calcular() {
-  // Obter o número de funcionários, meses trabalhados e valor arrecadado
-  const numFuncionarios = parseInt(
-    document.getElementById("numFuncionarios").value
-  );
+  const numFuncionarios = document.getElementById("numFuncionarios").value;
+  const valorArrecadado = document.getElementById("valor").value;
   const mesesInput = document.getElementById("meses").value;
-  const valorInput = parseFloat(document.getElementById("valor").value);
+  const mesesTrabalhados = mesesInput.split(",").map((m) => parseInt(m.trim()));
 
-  // Verificar se os campos não estão vazios
-  if (!numFuncionarios || !mesesInput || !valorInput || isNaN(valorInput)) {
+  if (
+    !numFuncionarios ||
+    !valorArrecadado ||
+    mesesTrabalhados.length !== parseInt(numFuncionarios)
+  ) {
     alert("Por favor, preencha todos os campos corretamente.");
     return;
   }
 
-  // Converter os meses inseridos em um array de números
-  const mesesTrabalhados = mesesInput
-    .split(",")
-    .map((mes) => parseInt(mes.trim()));
+  let somaMeses = mesesTrabalhados.reduce((acc, cur) => acc + cur, 0);
+  const valorPorMes = valorArrecadado / somaMeses;
 
-  // Verificar se o número de meses corresponde ao número de funcionários
-  if (mesesTrabalhados.length !== numFuncionarios) {
-    alert("O número de meses não corresponde ao número de funcionários.");
-    return;
+  let resultados = "";
+  for (let i = 0; i < numFuncionarios; i++) {
+    let valorRecebido = valorPorMes * mesesTrabalhados[i];
+    resultados += `<p>Funcionário ${i + 1} (meses: ${
+      mesesTrabalhados[i]
+    }): R$ ${valorRecebido.toFixed(2)}</p>`;
   }
 
-  // Calcular a soma dos meses trabalhados
-  const somaMeses = mesesTrabalhados.reduce((acc, mes) => acc + mes, 0);
+  document.getElementById("resultado").innerHTML = resultados;
+}
 
-  // Calcular o valor por mês
-  const valorPorMes = valorInput / somaMeses;
+// Função para mostrar o modal de ajuda
+function mostrarAjuda() {
+  document.getElementById("ajudaModal").style.display = "block";
+}
 
-  // Calcular o valor de cada funcionário
-  let resultados = mesesTrabalhados.map((mes) =>
-    (mes * valorPorMes).toFixed(2)
-  );
-
-  // Exibir os resultados
-  let resultadoTexto = "<h3>Distribuição:</h3>";
-  resultados.forEach((valor, index) => {
-    resultadoTexto += `<p>Funcionário com ${mesesTrabalhados[index]} meses: R$ ${valor}</p>`;
-  });
-
-  document.getElementById("resultado").innerHTML = resultadoTexto;
+// Função para fechar o modal de ajuda
+function fecharAjuda() {
+  document.getElementById("ajudaModal").style.display = "none";
 }
