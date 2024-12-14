@@ -1,0 +1,104 @@
+/* Reset de margin e padding para garantir consistência */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo básico do body */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+  overflow: hidden;
+}
+
+/* Container principal */
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Mudado de 100% para 90% para dar uma margem */
+  max-width: 400px;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Título */
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Estilos dos labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+}
+
+/* Estilos dos inputs e botão */
+input[type="number"], input[type="text"], button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Botão */
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Resultado */
+.result {
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  text-align: left;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 500px) {
+  .container {
+      padding: 15px;
+      width: 90%;
+      max-width: 350px; /* Ajusta o tamanho máximo da caixa */
+  }
+
+  h2 {
+      font-size: 20px;
+  }
+
+  input[type="number"], input[type="text"], button {
+      padding: 10px;
+      font-size: 14px; /* Ajusta o tamanho da fonte */
+  }
+
+  label {
+      font-size: 13px; /* Ajuste para uma melhor visualização */
+  }
+
+  .result {
+      font-size: 14px; /* Ajusta o tamanho do texto do resultado */
+  }
+}

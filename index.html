@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caixinha Proporcional</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Caixinha Natalina - Cálculo Proporcional por meses trabalhados</h2>
+
+    <label for="numFuncionarios">Quantos funcionários o prédio tem?</label>
+    <input type="number" id="numFuncionarios" placeholder="Número de funcionários" />
+
+    <label for="meses">Digite os meses trabalhados de cada funcionário (separados por vírgula):</label>
+    <input type="text" id="meses" placeholder="Exemplo: 12, 12, 11, 3, 12, 12, 12" />
+
+    <label for="valor">Valor arrecadado:</label>
+    <input type="number" id="valor" placeholder="Valor arrecadado" />
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div class="result" id="resultado"></div>
+  </div>
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
