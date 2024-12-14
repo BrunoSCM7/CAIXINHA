@@ -25,3 +25,7 @@ Com esses dados, o sistema faz a divisão proporcional do valor entre os funcion
 - **HTML**: Estrutura básica da página.
 - **CSS**: Estilo visual do site.
 - **JavaScript**: Lógica de cálculo e interatividade.
+
+## Acesse o projeto
+
+Para acessar, clique [aqui](https://brunoscm7.github.io/Caixinha-Natalina/).
