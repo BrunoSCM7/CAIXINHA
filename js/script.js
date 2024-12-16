@@ -19,9 +19,13 @@ function calcular() {
   let resultados = "";
   for (let i = 0; i < numFuncionarios; i++) {
     let valorRecebido = valorPorMes * mesesTrabalhados[i];
-    resultados += `<p>Funcionário ${i + 1} (meses: ${
-      mesesTrabalhados[i]
-    }): R$ ${valorRecebido.toFixed(2)}</p>`;
+    let mesesFormatados =
+      mesesTrabalhados[i] < 10
+        ? `0${mesesTrabalhados[i]}`
+        : mesesTrabalhados[i];
+    resultados += `<p>Funcionário ${
+      i + 1
+    } (meses: ${mesesFormatados}): R$ ${valorRecebido.toFixed(2)}</p>`;
   }
 
   document.getElementById("resultado").innerHTML = resultados;

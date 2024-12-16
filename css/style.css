@@ -9,8 +9,9 @@
 
 /* Estilo para o corpo da página */
 body {
-  font-family: Arial, sans-serif;
   background-color: #f4f4f9;
+  background-image: url(../assets/wallpaper-natal.jpg);
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +38,10 @@ h2 {
 
 label {
   display: block;
+  width: 100%;
+  /* text-align: center; */
   font-size: 16px;
+  font-weight: 600;
   margin-bottom: 8px;
   color: #555;
 }
@@ -60,6 +64,7 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 60%;
 }
 
 button:hover {
@@ -75,6 +80,7 @@ button:focus {
   font-size: 18px;
   color: #333;
   text-align: left;
+  margin: 10px auto;
 }
 
 /* Estilo para o botão de ajuda */
@@ -85,7 +91,7 @@ button:focus {
   border: none;
   border-radius: 5px;
   font-size: 16px;
-  margin-top: 20px;
+  /* margin-top: 5px; */
   cursor: pointer;
 }
 
@@ -131,11 +137,12 @@ button:focus {
   cursor: pointer;
 }
 
+
 /* Responsividade para telas pequenas */
 @media (max-width: 600px) {
   .container {
     width: 90%;
-    padding: 15px;
+    padding: 25px;
   }
 
   h2 {
@@ -143,10 +150,34 @@ button:focus {
   }
 
   button, #helpButton {
-    width: 100%;
+    width: 70%;
   }
 
   input[type="number"], input[type="text"] {
     font-size: 14px;
   }
+
+  /* Labels centralizadas e em negrito */
+  label {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Campos específicos com texto centralizado */
+  input[type="number"]#numFuncionarios,
+  input[type="number"]#valor {
+    text-align: center; /* Centralizar texto digitado */
+  }
+
+  /* Manter o texto alinhado à esquerda no campo de meses */
+  input[type="text"]#meses {
+    text-align: left;
+  }
+
+  /* Reduzir largura dos inputs em geral */
+  input[type="number"], input[type="text"] {
+    width: 90%;
+    padding: 8px;
+  }
 }
+
